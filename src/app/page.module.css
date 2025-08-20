@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+}
+
+.clock {
+  font-size: 72px;
+  font-family: "din-2014", sans-serif;
+  font-style: italic;
+  padding: 1em;
+  top: 0;
+  left: 0;
+}
+
+.settings {
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  background-color: white;
+}

@@ -1,0 +1,39 @@
+.inputLabel {
+  font-weight: bold;
+  display: block;
+}
+
+.numInput {
+  border: 1px solid grey;
+  border-radius: 0.25em;
+  padding: 0.25em;
+}
+
+.radioLabel {
+  font-weight: bold;
+  display: inline;
+}
+
+.radioContainer {
+  margin: 20px 0;
+}
+
+.radioInput {
+  margin-right: 5px;
+}
+
+.setButton {
+  display: block;
+  background-color: rgb(93, 236, 193);
+  filter: drop-shadow(0 5px 0 rgb(6, 133, 105));
+  padding: 1em;
+  border-radius: 1em;
+  margin: 1em 0;
+  min-width: 200px;
+}
+
+.setButton:active {
+  background-color: rgb(255, 244, 147);
+  transform: translateY(5px);
+  filter: none;
+}

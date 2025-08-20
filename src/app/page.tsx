@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Timer from "@/components/Timer";
-import Settings from "@/components/Settings";
+import Timer from "@/components/Timer/Timer";
+import Settings from "@/components/Settings/Settings";
+import styles from "./page.module.css";
 
 export default function Home() {
   const defaultMs = 25 * 60 * 1000;
@@ -32,15 +33,18 @@ export default function Home() {
   }, [isRunning]);
 
   return (
-    <main>
-      <Timer secs={Math.floor(remainMs / 1000)} isRunning={isRunning} />
-      <Settings
-        resetTo={resetTo}
-        toggleRun={toggleRun}
-        pomodoroDefaultMins={Math.floor(defaultMs / 1000 / 60)}
-      />
-      <br />
-      Is playing? {isRunning.toString()}
+    <main className={styles.container}>
+      <div className={styles.clock}>
+        <Timer secs={Math.floor(remainMs / 1000)} isRunning={isRunning} />
+      </div>
+      <div className={styles.settings}>
+        <Settings
+          isRunning={isRunning}
+          resetTo={resetTo}
+          toggleRun={toggleRun}
+          pomodoroDefaultMins={Math.floor(defaultMs / 1000 / 60)}
+        />
+      </div>
     </main>
   );
 }

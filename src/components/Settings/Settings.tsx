@@ -139,6 +139,7 @@ export default function Settings({
           {isRunning ? <Pause size={50} /> : <Play size={50} />}
         </button>
       </form>
+      <p>「アラーム音:MusMus」</p>
     </>
   );
 }

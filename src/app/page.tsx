@@ -20,11 +20,28 @@ export default function Home() {
     setRemainMs(secs * 1000);
   }
 
+  function ring() {
+    const audio = new Audio("/ring.mp3");
+    audio.play().catch((error) => console.log("Failed to play sound:", error));
+  }
+
   useEffect(() => {
     let intervalId: ReturnType<typeof setInterval>;
+    let hasRung = false;
+
     if (isRunning) {
       intervalId = setInterval(() => {
-        setRemainMs((s) => s - 100);
+        setRemainMs((s) => {
+          if (s <= 100) {
+            if (s > 0 && !hasRung) {
+              hasRung = true;
+              ring();
+            }
+            setRun(false);
+            return 0;
+          }
+          return s - 100;
+        });
       }, 100);
     }
     return () => {
